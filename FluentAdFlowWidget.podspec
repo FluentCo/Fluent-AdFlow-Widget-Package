@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
   s.source           = { :http => 'https://fluent-adflow-mobile-sdk.s3.amazonaws.com/ios/FluentAdFlowWidget.xcframework.v0.0.1.zip' }
   s.ios.deployment_target = '13.0'
   s.swift_version = '5.8'
-  s.vendored_frameworks = 'FluentAdFlowWidget.xcframework'
+  s.vendored_frameworks = 'Fluent_AdFlow_Widget.xcframework'
 end
