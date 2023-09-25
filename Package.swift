@@ -4,19 +4,19 @@
 import PackageDescription
 
 let package = Package(
-    name: "FluentAdFlowWidget",
+    name: "FluentAdFlowAdsWidget",
     platforms: [.iOS(.v13)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "Fluent_AdFlow_Widget",
-            targets: ["FluentAdFlowWidgetFramework"]),
+            name: "FluentAdFlowAdsWidget",
+            targets: ["fluentAdFlowAdsWidget"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
     targets: [
-        .binaryTarget(name: "FluentAdFlowWidgetFramework", url: "https://fluent-adflow-mobile-sdk.s3.amazonaws.com/ios/FluentAdFlowWidget.xcframework.v0.0.1.zip", checksum: "4cb3d45a2544b1b087218f59bd502f9b243396586309c008292677b467875af0")
+        .binaryTarget(name: "fluentAdFlowAdsWidget", url: "https://fluent-adflow-mobile-sdk.s3.amazonaws.com/ios/FluentAdFlowAdsWidget.xcframework.v0.0.1.zip", checksum: "d8b2f65f9ee66f8a59bd1d22ab3dfdc3b4d11c722408c399e920b8f37fd1bfc7")
     ]
 )
