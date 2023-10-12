@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'FluentAdFlowAdsWidget'
-  s.version          = '0.0.2'
+  s.version          = '0.0.5'
   s.summary          = 'Fluent AdFlow Ads Widget iOS SDK'
   s.description      = 'The FluentAdFlowWidget iOS SDK enables you to integrate Fluent into your native iOS mobile apps.'
 
@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
     Licensed under the FluentAdsKit Software Development Kit (SDK) Terms of Use Version 1.0 (the "License")
     LICENSE
   }
-  s.author           = { 'awongfluentco' => 'awong@fluentco.com' }
-  s.source           = { :http => 'https://fluent-adflow-mobile-sdk.s3.amazonaws.com/ios/FluentAdFlowAdsWidget.xcframework.v0.0.2.zip' }
+  s.author           = { 'fluent' => 'fluent' }
+  s.source           = { :http => 'https://mobile-sdk.adflow-prod.minionplatform.com/ios/FluentAdFlowAdsWidget.xcframework.v0.0.5.zip' }
   s.ios.deployment_target = '13.0'
   s.swift_version = '5.8'
   s.vendored_frameworks = 'FluentAdFlowAdsWidget.xcframework'
