@@ -1,1 +1,95 @@
-# FluentAdFlowWidget iOS SDK
+# Fluent AdFlow Widget iOS SDK
+
+Fluent AdFlow Widget SDK for iOS
+
+## Requirements
+
+Download the latest version of [XCode](https://developer.apple.com/xcode/) for development.
+
+## Project structure
+
+`Package.swift` is the main package manifest that defines updated configurations to the Fluent AdFlow Widget iOS SDK package. This manifest has a target of the iOS SDK binary.
+
+## Installation
+
+To install for iOS development:
+
+On Xcode:
+
+Go to File > Add Packages
+Enter Package URL https://github.com/FluentCo/Fluent-AdFlow-Widget-Package.git
+Select Up to Next Major with the highest version available.
+
+You can also add this code snippet to the `dependencies` part of `Package.swift`.
+
+```
+dependencies: [
+    .package(url: "https://github.com/FluentCo/Fluent-AdFlow-Widget-Package.git", .upToNextMajor(from: "<highest-available-version>"))
+]
+```
+
+## Integration into your application
+
+### Instantiation and initialization
+
+```
+import FluentAdFlowAdsWidget
+import SwiftUI
+
+class FluentSDKIntegration: NSObject, ObservableObject {
+    var sdk : FluentAdFlowWidget?
+
+    func callSDK(){
+        sdk = FluentAdFlowWidget(apiKey: "<your-api-key>", referer: "<referer>")
+    }
+
+    func loadWebView() -> WebView {
+        return (sdk?.show(params:  ["email": "jsmith@gmail.com"]))!
+    }
+}
+```
+
+### Usage in the display of your application
+
+```
+import SwiftUI
+
+struct ContentView: View {
+    @StateObject var fluentDelegate =  FluentSDKCall()
+
+    var body: some View {
+        VStack {
+            HStack (alignment: .center){
+                Button {
+                    fluentDelegate.callSDK()
+                } label: {
+                    Text("Call sdk")
+                }
+            }.frame(
+                minWidth: 0,
+                maxWidth: .infinity
+            ).padding(15)
+
+
+
+            if fluentDelegate.showAd {
+                fluentDelegate.loadWebView()
+            }
+
+            Button("Load Ad View") {
+                fluentDelegate.showAd.toggle()
+            }
+
+
+            Spacer()
+        }
+        .padding()
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+```
