@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'FluentAdFlowAdsWidget'
-  s.version          = '0.0.5'
+  s.version          = '1.0.0'
   s.summary          = 'Fluent AdFlow Ads Widget iOS SDK'
   s.description      = 'The FluentAdFlowWidget iOS SDK enables you to integrate Fluent into your native iOS mobile apps.'
 
