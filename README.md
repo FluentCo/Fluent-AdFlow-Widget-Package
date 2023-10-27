@@ -32,7 +32,7 @@ dependencies: [
 
 ### Instantiation and initialization
 
-You can instatiate and initialize the sdk with the following:
+You can instantiate and initialize the sdk with the following:
 
 ```
 var sdk : FluentAdFlowWidget
