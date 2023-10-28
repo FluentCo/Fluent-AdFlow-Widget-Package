@@ -32,36 +32,28 @@ dependencies: [
 
 ### Instantiation and initialization
 
+You can instantiate and initialize the sdk with the following:
+
 ```
-import FluentAdFlowAdsWidget
-import SwiftUI
-
-class FluentSDKIntegration: NSObject, ObservableObject {
-    var sdk : FluentAdFlowWidget?
-
-    func callSDK(){
-        sdk = FluentAdFlowWidget(apiKey: "<your-api-key>", referer: "<referer>")
-    }
-
-    func loadWebView() -> WebView {
-        return (sdk?.show(params:  ["email": "jsmith@gmail.com"]))!
-    }
-}
+var sdk : FluentAdFlowWidget
+sdk = FluentAdFlowWidget(apiKey: "<your-api-key>", referer: "<referer>")
 ```
 
 ### Usage in the display of your application
 
 ```
 import SwiftUI
+import FluentAdFlowAdsWidget
 
 struct ContentView: View {
-    @StateObject var fluentDelegate =  FluentSDKCall()
+    @State var showAd = false
+    @State var sdk : FluentAdFlowWidget?
 
     var body: some View {
         VStack {
             HStack (alignment: .center){
                 Button {
-                    fluentDelegate.callSDK()
+                    sdk = FluentAdFlowWidget(apiKey: "<your-api-key>", referer: "<referer>")
                 } label: {
                     Text("Call sdk")
                 }
@@ -72,12 +64,12 @@ struct ContentView: View {
 
 
 
-            if fluentDelegate.showAd {
-                fluentDelegate.loadWebView()
+            if showAd {
+                sdk?.show(params:  ["email": "jsmith@gmail.com"])
             }
 
             Button("Load Ad View") {
-                fluentDelegate.showAd.toggle()
+                showAd.toggle()
             }
 
 
