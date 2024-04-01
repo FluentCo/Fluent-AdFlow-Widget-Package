@@ -17,6 +17,6 @@ let package = Package(
         // .package(url: /* package url */, from: "1.0.0"),
     ],
     targets: [
-        .binaryTarget(name: "fluentAdFlowAdsWidget", url: "https://mobile-sdk.adflow-prod.minionplatform.com/ios/v1.0.15/FluentAdFlowAdsWidget.xcframework.v1.0.15.zip", checksum: "0b4d30c0f25e9dceb9bf1dfe84177f39265063ac18415c39caea2b4e53810430")
+        .binaryTarget(name: "fluentAdFlowAdsWidget", url: "https://mobile-sdk.adflow-prod.minionplatform.com/ios/v1.0.16/FluentAdFlowAdsWidget.xcframework.v1.0.16.zip", checksum: "e1c7e1c8b6ab44eddf14f89d0884cbcb566aaae62348d4f81d5f26c2dcd37b91")
     ]
 )
