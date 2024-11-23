@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   }
   s.author           = { 'fluent' => 'fluentco.com' }
   s.source           = { :http => 'https://mobile-sdk.adflow-prod.minionplatform.com/ios/v2.0.0/FluentAdFlowAdsWidget.xcframework.v2.0.0.zip' }
-  s.ios.deployment_target = '13.0'
+  s.ios.deployment_target = '14.0'
   s.swift_version = '5.8'
   s.vendored_frameworks = 'FluentAdFlowAdsWidget.xcframework'
 end
