@@ -28,6 +28,20 @@ dependencies: [
 ]
 ```
 
+## Privacy Settings: User Tracking Permission
+
+Before using the SDK, you need to request permission to track the user's activity. Add the following key to your Info.plist to explain why your app is requesting this permission:
+
+- Open the Info.plist file in your Xcode project.
+- Add the following key to the file:
+
+```
+<key>NSUserTrackingUsageDescription</key>
+<string>This app uses tracking to display personalized ads. We value your privacy and will only use this data for ad display purposes.</string>
+```
+
+This description will be shown in the app’s privacy dialog to explain why the app is requesting user tracking permission. You can customize the message as needed to fit your app's context.
+
 ## SwiftUI integration
 
 ### Initializing the SDK
@@ -133,8 +147,8 @@ struct ContentView: View {
 
 ### Important Notes
 
-- SDK Initialization: The SDK must be initialized when the app starts. Use the FluentAdFlowAdsSdk().initSdk("<your-api-key>", withReferrer: "<referer>") method with your API key and referer.
-- Using the Widget: Call fluentAdFlowWidget.getView() to display the ad widget in your app.
-- Personalizing the Ad: Use setParams() to pass user data (like email, transaction info, etc.) so the ad can be customized based on that data.
+- SDK Initialization: The SDK must be initialized when the app starts. Call the FluentAdFlowAdsSdk().initSdk("<your-api-key>", withReferrer: "<referrer>") method, providing your API key and referrer.
+- Using the Widget: Add the view component by calling getView() on the FluentAdFlowWidget object to display the ad widget in your app.
+- Loading the Ad: Use setParams() to load the ads into the view by passing user data (such as email, transaction details, etc.), allowing the ad to be personalized based on that information.
 
 With these simple steps, you can integrate the Fluent AdFlow Widget SDK into your iOS app and start displaying personalized ads!
